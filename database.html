@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Creation de la table</title>
+    </head>
+    <body>
+        <?php
+        $host = "host";
+        $user = "Admin";
+        $password = "password";
+        $database = "SNSM";
+        mysql_connect($host, $user, $password) or die ("Enable to connect to the server");
+        mysql_select_db($database) or die ("Enable to connect to the database");
+        $query = "CREATE TABLE information (
+            name varchar(128) NOT NULL,
+            first_name varchar(128),
+            born DATE,
+            death DATE,
+            pj varchar(128) NOT NULL
+        )";
+        mysql_query($query) or die ("Erreur de modification de  la table");
+        mysql_close();
+        ?>
+    </body>
+</html>
